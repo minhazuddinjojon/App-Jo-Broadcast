@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jo Broadcast</string>
+
+    <!-- Navigation -->
+    <string name="menu_broadcast_receiver">Broadcast Receiver</string>
+    <string name="menu_image_scale">Image Scale</string>
+    <string name="menu_video">Video</string>
+    <string name="menu_audio">Audio</string>
+    <string name="nav_header_title">Jo Broadcast</string>
+    <string name="nav_header_subtitle">Mobile Application Development</string>
+
+    <!-- Broadcast selection screen -->
+    <string name="label_select_broadcast_type">Select a broadcast type</string>
+    <string name="btn_proceed">Proceed</string>
+    <string name="subtitle_custom_broadcast">You\'ll type a message, then a custom receiver will pick it up live.</string>
+    <string name="subtitle_battery_broadcast">You\'ll see your device\'s real battery percentage, read from a live system broadcast.</string>
+
+    <!-- Custom broadcast input screen -->
+    <string name="label_enter_message">Enter a message to broadcast</string>
+    <string name="hint_message">Type your message</string>
+    <string name="error_empty_message">Please enter a message</string>
+
+    <!-- Battery broadcast screen -->
+    <string name="label_battery_broadcast">System Battery Notification Receiver</string>
+    <string name="battery_hint">Live reading from your device\'s battery, via a dynamically registered BroadcastReceiver.</string>
+
+    <!-- Custom broadcast receiver screen -->
+    <string name="label_custom_receiver">Custom Broadcast Receiver</string>
+    <string name="message_from_previous_screen_format">Message received from previous screen:\n\u201C%1$s\u201D</string>
+    <string name="btn_send_broadcast">Send Broadcast</string>
+    <string name="received_message_format">Broadcast received: %1$s</string>
+    <string name="not_received_yet">No broadcast received yet. Tap the button above.</string>
+
+    <!-- Image scale screen -->
+    <string name="label_pinch_to_zoom">Pinch to zoom, drag to pan</string>
+    <string name="btn_reset_zoom">Reset zoom</string>
+    <string name="zoom_percent_format">%1$d%%</string>
+
+    <!-- Video screen -->
+    <string name="btn_replay">Replay</string>
+
+    <!-- Audio screen -->
+    <string name="audio_track_title">Sample Track — SoundHelix</string>
+    <string name="default_time">00:00</string>
+    <string name="btn_play_pause">Play or pause audio</string>
+
+    <string name="error_media_playback">Unable to load media. Please check your internet connection.</string>
+</resources>

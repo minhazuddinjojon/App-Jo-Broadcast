@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/broadcastSelectionFragment">
+
+    <fragment
+        android:id="@+id/broadcastSelectionFragment"
+        android:name="com.bracu.cse489.assignment2.ui.broadcast.BroadcastSelectionFragment"
+        android:label="@string/menu_broadcast_receiver"
+        tools:layout="@layout/fragment_broadcast_selection">
+
+        <action
+            android:id="@+id/action_broadcastSelectionFragment_to_customBroadcastInputFragment"
+            app:destination="@id/customBroadcastInputFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_broadcastSelectionFragment_to_batteryBroadcastFragment"
+            app:destination="@id/batteryBroadcastFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/customBroadcastInputFragment"
+        android:name="com.bracu.cse489.assignment2.ui.broadcast.CustomBroadcastInputFragment"
+        android:label="@string/label_enter_message"
+        tools:layout="@layout/fragment_custom_broadcast_input">
+
+        <action
+            android:id="@+id/action_customBroadcastInputFragment_to_customBroadcastReceiverFragment"
+            app:destination="@id/customBroadcastReceiverFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/batteryBroadcastFragment"
+        android:name="com.bracu.cse489.assignment2.ui.broadcast.BatteryBroadcastFragment"
+        android:label="@string/label_battery_broadcast"
+        tools:layout="@layout/fragment_battery_broadcast" />
+
+    <fragment
+        android:id="@+id/customBroadcastReceiverFragment"
+        android:name="com.bracu.cse489.assignment2.ui.broadcast.CustomBroadcastReceiverFragment"
+        android:label="@string/label_custom_receiver"
+        tools:layout="@layout/fragment_custom_broadcast_receiver">
+
+        <argument
+            android:name="message"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageScaleFragment"
+        android:name="com.bracu.cse489.assignment2.ui.imagescale.ImageScaleFragment"
+        android:label="@string/menu_image_scale"
+        tools:layout="@layout/fragment_image_scale" />
+
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.bracu.cse489.assignment2.ui.video.VideoFragment"
+        android:label="@string/menu_video"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="com.bracu.cse489.assignment2.ui.audio.AudioFragment"
+        android:label="@string/menu_audio"
+        tools:layout="@layout/fragment_audio" />
+
+</navigation>

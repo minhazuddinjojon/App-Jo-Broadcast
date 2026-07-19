@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="broadcast_type_options">
+        <item>Custom Broadcast Receiver</item>
+        <item>System Battery Notification Receiver</item>
+    </string-array>
+</resources>
