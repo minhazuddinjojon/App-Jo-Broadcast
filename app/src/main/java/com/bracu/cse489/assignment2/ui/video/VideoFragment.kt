@@ -33,7 +33,10 @@ class VideoFragment : Fragment(R.layout.fragment_video) {
         val mediaController = MediaController(requireContext())
         mediaController.setAnchorView(binding.videoView)
         binding.videoView.setMediaController(mediaController)
-        binding.videoView.setVideoURI(Uri.parse(SAMPLE_VIDEO_URL))
+        
+        // Use local raw resource for reliability
+        val videoPath = "android.resource://" + requireContext().packageName + "/" + R.raw.sample_video
+        binding.videoView.setVideoURI(Uri.parse(videoPath))
 
         binding.progressVideo.visibility = View.VISIBLE
 
