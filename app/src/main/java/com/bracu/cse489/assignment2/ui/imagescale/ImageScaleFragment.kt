@@ -62,6 +62,14 @@ class ImageScaleFragment : Fragment(R.layout.fragment_image_scale) {
         binding.btnResetZoom.setOnClickListener {
             binding.pinchZoomImageView.resetZoom()
         }
+
+        binding.btnZoomIn.setOnClickListener {
+            binding.pinchZoomImageView.zoomIn()
+        }
+
+        binding.btnZoomOut.setOnClickListener {
+            binding.pinchZoomImageView.zoomOut()
+        }
     }
 
     override fun onDestroyView() {

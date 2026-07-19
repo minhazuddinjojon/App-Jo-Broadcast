@@ -84,6 +84,30 @@ class PinchZoomImageView @JvmOverloads constructor(
         onScaleChanged?.invoke(1f)
     }
 
+    fun zoomIn() {
+        if (scaleFactor < maxScale) {
+            scaleFactor = (scaleFactor + 0.5f).coerceAtMost(maxScale)
+            pivotX = width / 2f
+            pivotY = height / 2f
+            animate().scaleX(scaleFactor).scaleY(scaleFactor).setDuration(200).withEndAction {
+                clampTranslation()
+            }.start()
+            onScaleChanged?.invoke(scaleFactor)
+        }
+    }
+
+    fun zoomOut() {
+        if (scaleFactor > minScale) {
+            scaleFactor = (scaleFactor - 0.5f).coerceAtLeast(minScale)
+            pivotX = width / 2f
+            pivotY = height / 2f
+            animate().scaleX(scaleFactor).scaleY(scaleFactor).setDuration(200).withEndAction {
+                clampTranslation()
+            }.start()
+            onScaleChanged?.invoke(scaleFactor)
+        }
+    }
+
     private fun clampTranslation() {
         val scaledWidth = width * scaleFactor
         val scaledHeight = height * scaleFactor
