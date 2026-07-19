@@ -48,6 +48,10 @@ class PinchZoomImageView @JvmOverloads constructor(
                 val previousScale = scaleFactor
                 scaleFactor = (scaleFactor * detector.scaleFactor).coerceIn(minScale, maxScale)
                 if (scaleFactor != previousScale) {
+                    // Pivot scaling around the pinch center
+                    pivotX = detector.focusX
+                    pivotY = detector.focusY
+                    
                     scaleX = scaleFactor
                     scaleY = scaleFactor
                     clampTranslation()
@@ -81,8 +85,10 @@ class PinchZoomImageView @JvmOverloads constructor(
     }
 
     private fun clampTranslation() {
-        val maxTranslationX = (width * (scaleFactor - 1f)) / 2f
-        val maxTranslationY = (height * (scaleFactor - 1f)) / 2f
+        val scaledWidth = width * scaleFactor
+        val scaledHeight = height * scaleFactor
+        val maxTranslationX = (scaledWidth - width) / 2f
+        val maxTranslationY = (scaledHeight - height) / 2f
         translationX = translationX.coerceIn(-maxTranslationX, maxTranslationX)
         translationY = translationY.coerceIn(-maxTranslationY, maxTranslationY)
     }
